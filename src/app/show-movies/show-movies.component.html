@@ -1,0 +1,30 @@
+<mat-form-field class="w-100">
+  <input
+    matInput
+    (keyup)="applyFilter($event.target.value)"
+    placeholder="Search Movie here.."
+  />
+</mat-form-field>
+
+<div class="mat-elevation-z8 table">
+  <table mat-table [dataSource]="dataSource" matSort>
+    <ng-container *ngFor="let head of displayedColumns">
+      <ng-container [matColumnDef]="head">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header style="color:royalblue">{{ head }}</th>
+        <td mat-cell *matCellDef="let element">{{ element[head] }}</td>
+      </ng-container>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr
+      mat-row
+      *matRowDef="let row; columns: displayedColumns"
+      (click)="getDetails(row)"
+    ></tr>
+  </table>
+
+  <mat-paginator
+    [pageSizeOptions]="[10, 100, 200, 300, 450]"
+    showFirstLastButtons
+  ></mat-paginator>
+</div>

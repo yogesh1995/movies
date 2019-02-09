@@ -1,0 +1,15 @@
+thead tr {
+  text-align: left;
+}
+
+tbody tr {
+  border: 1px solid;
+}
+
+td {
+  padding: 10px;
+}
+
+table {
+  border-collapse: collapse;
+}

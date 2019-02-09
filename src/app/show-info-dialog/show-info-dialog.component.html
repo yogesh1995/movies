@@ -1,0 +1,23 @@
+<div style="text-align: right; color: tomato">
+<button (click)="onCloseClick()" class="btn btn-warning">CLOSE <i class="fa-close" style="font-size:24px"></i></button>
+</div> 
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Details</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let rowName of keys">
+      <td style="color: black">{{ rowName }}:</td>
+      <td *ngIf="rowName !== 'Ratings'">{{ data[rowName] }}</td>
+      <td *ngIf="rowName === 'Ratings'">
+        <ng-container *ngFor="let info of data[rowName]">
+          <div>"Source" : {{ info.Source }} "Value" : {{ info.Value }}</div>
+        </ng-container>
+      </td>
+    </tr>
+  </tbody>
+</table>

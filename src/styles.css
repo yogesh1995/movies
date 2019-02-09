@@ -1,0 +1,13 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+td.mat-cell,
+td.mat-footer-cell,
+th.mat-header-cell {
+  width: 17%;
+  padding-left: 5px !important;
+}
+
+tr.mat-footer-row,
+tr.mat-row {
+  cursor: pointer;
+}
